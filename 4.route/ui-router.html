@@ -1,0 +1,17 @@
+<!-- 
+	1、下载angular-ui-router包并导入（注意要放在angular后加载）
+	2、在ff中访问页面，在chrome中会出现 XMLHttpRequest cannot load file:// 。。。 错误
+
+ -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<meta charset="UTF-8">
+<body>
+	<div ui-view>
+		
+	</div>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="ui-router.js"></script>
+</body>
+</html>
