@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="UserInfoModule">
+<meta charset="UTF-8">
+<style>
+	.red {
+		color: red;
+	}
+</style>
+<body>
+	<!-- 控制器 -->
+	<form ng-controller="UserInfoCtrl">
+		<!-- 绑定样式 -->
+		<div ng-class="{red: isRed}">
+			<label>用户名：</label>
+			<!-- 双向绑定 -->
+			<input type="text" ng-model="userInfo.username">
+			<!-- 单向绑定 -->
+			<label ng-bind="userInfo.username"></label>
+		</div>
+		<div class="password">
+			<lable>密　码：</lable>
+			<input type="password" ng-model="userInfo.password">
+			<label ng-bind="userInfo.password"></label>
+		</div>
+		<div class="autoLogin">
+			<lable>自动登录
+				<input type="checkbox" ng-model="userInfo.autoLogin">
+			</lable>
+		</div>
+		<!-- 事件绑定 -->
+		<button class="setVal" ng-click="setVal()">设置</button>
+		<button class="resetVal" ng-click="resetVal()">重置</button>
+	</form>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="demo.js"></script>
+</body>
+</html>

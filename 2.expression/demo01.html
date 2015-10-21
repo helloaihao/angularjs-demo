@@ -1,0 +1,23 @@
+<!--
+	类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。
+	与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。
+	与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。
+	与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。 
+ -->
+<!DOCTYPE html>
+<html ng-app ng-init="count=3;cost=5;Person={firstName:'艾', lastName:'豪'};matrix=[1, 2, 3, 5, 8, 13]">
+<meta charset="UTF-8">
+<body>
+	<div>
+		<p>表达式写在双大括号内：</p>
+		<p>总价：{{count * cost}}</p>
+		<p>表达式绑定到html标签：</p>
+		<p>总价：<span ng-bind="count * cost"></span></p>
+		<p>表达式中使用对象：</p>
+		<p>姓名：{{Person.firstName + Person.lastName}}</p>
+		<p>表达式中使用数组</p>
+		<p>第二个值为：{{matrix[1]}}</p>
+	</div>
+	<script src="../bower_components/angular/angular.min.js"></script>
+</body>
+</html>

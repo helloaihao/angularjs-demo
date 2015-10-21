@@ -1,0 +1,22 @@
+<!-- 
+	ng-app		  指令定义了应用
+	ng-controller 指令定义了控制器
+ -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<meta charset="UTF-8">
+<body>
+	<div ng-controller="myCtrl">
+		<p>表达式：{{ 1 + 1 }}</p>
+		<p>变量：{{firstName + lastName}}</p>
+	</div>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('myApp',[]);		//定义模块
+		app.controller('myCtrl', function($scope) {	//定义控制器
+			$scope.firstName = "艾";
+			$scope.lastName = "豪";
+		});
+	</script>
+</body>
+</html>
