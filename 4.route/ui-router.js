@@ -10,19 +10,26 @@ angular.module('myApp')
 angular.module('myApp')
 .config(function ($stateProvider) {
 
-	//$urlRouterProvider.otherwise('/index');
-
 	$stateProvider
 	.state('index', {
 		url: '/index',
+		templateUrl: 'index.html'
+	})
+
+	.state('header', {
+		parent: 'index',
+		url: '/header',
 		views: {
-			'': {
-				templateUrl: 'index.html'
-			},
-			'header@index': {
+			'@index': {
 				templateUrl: 'header.html'
-			},
-			'footer@index': {
+			}
+		}
+	})
+
+	.state('header.footer', {
+		url: '/footer',
+		views: {
+			'@index': {
 				templateUrl: 'footer.html'
 			}
 		}
